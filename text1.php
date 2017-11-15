@@ -9,12 +9,6 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', TRUE);
 
-	$date = new DateTime();
-	$startTime = $date->format('Y-m-d H:i:s');
-	echo "START: {$startTime}";
-
-	$timeSecond = strtotime('2011-05-13 18:20:20');
-	// $differenceInSeconds = $timeSecond - $timeFirst;
 
 	$connection = mysqli_connect('localhost', 'root', '', 'bacs383');
 
@@ -23,10 +17,7 @@
 	}
 
 	if (isset($_POST['text1Done'])) {
-		$endTime = $date->format('Y-m-d H:i:s');
-		echo "\n STOP: {$endTime}";
-
-		$difference = $endTime - $startTime;
+//GET THE TIMER FROM HTML BY JS
 
 		$updateText1 = "UPDATE test SET timeArticle1={$difference} WHERE firstName = '{$_SESSION["name"]}' AND timeStampTag='{$_SESSION['timeID']}' AND gender='{$_SESSION['gender']}';";
 
