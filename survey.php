@@ -29,6 +29,6 @@
 
 <script>
     function change() {
-        window.location.assign('end.html');
+        window.location.assign('end.php');
     }
 </script>

@@ -52,6 +52,10 @@ p {
     color: #282828;
 }
 
+input[type="radio"] {
+	margin-right: 5px;
+}
+
 button, input[type="submit"] {
     width: 200px;
     height: 40px;

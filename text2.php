@@ -51,6 +51,6 @@
 
 <script>
     function change() {
-        window.location.assign('text2Q.html')
+        window.location.assign('text2Q.php')
     }
 </script>
