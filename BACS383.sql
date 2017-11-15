@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.35)
 # Database: bacs383
-# Generation Time: 2017-11-15 02:37:43 +0000
+# Generation Time: 2017-11-15 08:04:17 +0000
 # ************************************************************
 
 
@@ -30,7 +30,7 @@ CREATE TABLE `test` (
   `firstName` varchar(30) DEFAULT '',
   `gender` varchar(1) DEFAULT '',
   `timestampTag` timestamp NULL DEFAULT NULL,
-  `timeArticle1` float DEFAULT NULL,
+  `timeArticle1` time DEFAULT NULL,
   `answer1` tinyint(1) DEFAULT NULL,
   `answer2` tinyint(1) DEFAULT NULL,
   `timeArticle2` float DEFAULT NULL,

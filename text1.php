@@ -9,7 +9,6 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', TRUE);
 
-
 	$connection = mysqli_connect('localhost', 'root', '', 'bacs383');
 
 	if (!$connection) {
@@ -18,8 +17,9 @@
 
 	if (isset($_POST['text1Done'])) {
 //GET THE TIMER FROM HTML BY JS
+		$seconds = $_POST['secondsInput'];
 
-		$updateText1 = "UPDATE test SET timeArticle1={$difference} WHERE firstName = '{$_SESSION["name"]}' AND timeStampTag='{$_SESSION['timeID']}' AND gender='{$_SESSION['gender']}';";
+		$updateText1 = "UPDATE test SET timeArticle1='{$seconds}' WHERE firstName = '{$_SESSION["name"]}' AND timeStampTag='{$_SESSION['timeID']}' AND gender='{$_SESSION['gender']}';";
 
 		mysqli_query($connection, $updateText1);
 
@@ -32,6 +32,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="stylesheet" href="css/magic.css">
+				<script src="js/easytimer.js"></script>
+				<script src="js/easytimer.min.js"></script>
+				<script src="js/jquery-3.2.1.min.js"></script>
         <title>5 Reasons to Learn a Second Language</title>
     </head>
 
@@ -75,6 +78,7 @@
 
             <p>During my travels I’ve made lifelong friends, some of whom don’t speak much or any English. Being able to communicate with people in other languages makes me more acutely aware that I’m part of a global community. Having Skype and Facebook means that even when I can’t travel to catch up with my far-flung friends, I can still stay in touch. It also means that I’m always learning, because invariably someone will post something that I don’t understand, because it is a phrase I’ve never heard or something colloquial. At times like that, I am grateful to google because in seconds I can translate the joke and reply.</p>
 						<form action="text1.php" method="POST" class="invisibleForm">
+							<input type="text" name="secondsInput" class="invisibleInput" id="inputSeconds">
 							<input type="submit" name="text1Done" value="Done">
 						</form>
 
@@ -82,3 +86,14 @@
 
     </body>
 </html>
+
+<script src="js/easytimer.min.js"></script>
+<script>
+	timer = new Timer();
+
+	timer.start();
+
+	timer.addEventListener('secondsUpdated', function (e) {
+		document.getElementById('inputSeconds').value = timer.getTimeValues().toString()
+	});
+</script>
