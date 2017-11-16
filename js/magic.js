@@ -63,4 +63,7 @@ function showRangeResult() {
 		dark.style.fontWeight = "300";
 		neither.style.fontWeight = "700"
 	}
+
+	document.getElementById('submitFQ').disabled = false;
+	document.getElementById('submitFQ').classList.remove('disabledButton');
 }

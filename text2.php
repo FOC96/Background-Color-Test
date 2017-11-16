@@ -1,9 +1,40 @@
+<?php
+	session_start();
+	$name = $_SESSION["name"];
+	$timeID = $_SESSION["timeID"];
+	$gender = $_SESSION["gender"];
+
+	date_default_timezone_set('America/Denver');
+
+	error_reporting(E_ALL);
+	ini_set('display_errors', TRUE);
+
+	$connection = mysqli_connect('localhost', 'root', '', 'bacs383');
+
+	if (!$connection) {
+		echo "No se pudo llevar a cabo la conexión.";
+	}
+
+	if (isset($_POST['text1Done'])) {
+//GET THE TIMER FROM HTML BY JS
+		$seconds = $_POST['secondsInput'];
+
+		$updateText1 = "UPDATE test SET timeArticle2='{$seconds}' WHERE firstName = '{$_SESSION["name"]}' AND timeStampTag='{$_SESSION['timeID']}' AND gender='{$_SESSION['gender']}';";
+
+		mysqli_query($connection, $updateText1);
+
+		header('Location: text2Q.php');
+	}
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="stylesheet" href="css/magic.css">
+				<script src="js/easytimer.js"></script>
+				<script src="js/easytimer.min.js"></script>
+				<script src="js/jquery-3.2.1.min.js"></script>
         <title>Can the Apple TV 4K be a cord-cutter's only streaming device?</title>
     </head>
     <body class="darkTheme" id="ArticleBody">
