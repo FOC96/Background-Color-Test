@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.35)
 # Database: bacs383
-# Generation Time: 2017-11-15 08:04:17 +0000
+# Generation Time: 2017-11-16 17:15:00 +0000
 # ************************************************************
 
 
@@ -31,12 +31,17 @@ CREATE TABLE `test` (
   `gender` varchar(1) DEFAULT '',
   `timestampTag` timestamp NULL DEFAULT NULL,
   `timeArticle1` time DEFAULT NULL,
-  `answer1` tinyint(1) DEFAULT NULL,
-  `answer2` tinyint(1) DEFAULT NULL,
-  `timeArticle2` float DEFAULT NULL,
-  `answer3` tinyint(1) DEFAULT NULL,
-  `answer4` tinyint(1) DEFAULT NULL,
-  `preference` char(1) DEFAULT '',
+  `A1Q1` tinyint(1) DEFAULT NULL,
+  `A1Q2` tinyint(1) DEFAULT NULL,
+  `A1Q3` tinyint(1) DEFAULT NULL,
+  `A1Q4` tinyint(1) DEFAULT NULL,
+  `timeArticle2` time DEFAULT NULL,
+  `A2Q1` tinyint(1) DEFAULT NULL,
+  `A2Q2` tinyint(1) DEFAULT NULL,
+  `A2Q3` tinyint(1) DEFAULT NULL,
+  `A2Q4` tinyint(1) DEFAULT NULL,
+  `prefTheme` char(1) DEFAULT NULL,
+  `prefStrength` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
