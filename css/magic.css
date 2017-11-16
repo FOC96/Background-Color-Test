@@ -228,3 +228,65 @@ h4 {
 	height: 0;
 	border: none;
 }
+
+#preferenceRange {
+	width: 100%;
+	-webkit-appearance: none;
+}
+
+#preferenceRange::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	border: none;
+	background: white;
+	border-radius: 15px;
+	margin-top: -7px;
+	transition: .4s all;
+	box-shadow: 0px 2px 6px 0px rgba(0,0,0,.4);
+}
+
+#preferenceRange::-webkit-slider-thumb:active {
+	background: gray;
+	width: 30px;
+	height: 30px;
+	margin-top: -12px;
+}
+
+#preferenceRange::-webkit-slider-runnable-track {
+	height: 5px;
+	width: 100%;
+	background: rgba(0,0,0,.2);
+	border-radius: 3px;
+}
+
+.rangeLegend {
+	width: 33%;
+	float: left;
+}
+
+.lightLegend {
+	float: right;
+	text-align: right;
+}
+
+.neitherLegend {
+	text-align: center;
+}
+
+.flexDiv {
+	display: flex;
+	justify-content: space-between;
+	width: 49%;
+	float: left;
+	margin-left: 10px;
+}
+
+#resultInput {
+	border: none;
+	width: 50%;
+	margin-left: 25%;
+	float: left;
+	text-align: center;
+	margin-top: 50px;
+}

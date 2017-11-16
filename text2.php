@@ -42,15 +42,23 @@
 
 
 
-            <button onclick="change()">Done</button>
+					 <form action="text2.php" method="POST" class="invisibleForm">
+						 <input type="text" name="secondsInput" class="invisibleInput" id="inputSeconds">
+						 <input type="submit" name="text1Done" value="Done">
+					 </form>
        </main>
 
     </body>
 </html>
 
 
+<script src="js/easytimer.min.js"></script>
 <script>
-    function change() {
-        window.location.assign('text2Q.php')
-    }
+	timer = new Timer();
+
+	timer.start();
+
+	timer.addEventListener('secondsUpdated', function (e) {
+		document.getElementById('inputSeconds').value = timer.getTimeValues().toString()
+	});
 </script>

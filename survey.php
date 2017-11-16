@@ -2,8 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
+				<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <link rel="stylesheet" href="css/magic.css">
+				<script src="js/magic.js" charset="utf-8"></script>
         <title>5 Reasons to Learn a Second Language</title>
     </head>
     <body id="QuestionsBody">
@@ -13,12 +15,14 @@
            <h4>One last question</h4>
             <p></p>
            <p>What did you enjoy most/prefer: reading with the dark background or with the light one?</p>
-            <input type="radio" name="theme" id="LightBack">
-            <label for="LightBack">Light Background (white background, black text)</label>
-            <br>
-            <input type="radio" name="theme" id="DarkBack">
-            <label for="DarkBack">Dark Background (black background, white text)</label>
-            <br>
+
+						<p class="rangeLegend darkLegend" id="darkThemeLabel">Dark Theme</p>
+						<p class="rangeLegend neitherLegend" id="neitherLabel">Neither</p>
+						<p class="rangeLegend lightLegend" id="lightThemeLabel">Light Theme</p>
+
+						<input type="range" name="preference" min="-5" max="5" value="0" id="preferenceRange" oninput="showRangeResult()">
+
+						<input type="text" name="" value="Neither" id="resultInput" disabled>
 <br>
             <button type="button" name="button" onclick="change()">Submit</button>
        </main>
