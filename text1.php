@@ -9,11 +9,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', TRUE);
 
-	$connection = mysqli_connect('localhost', 'root', '', 'bacs383');
-
-	if (!$connection) {
-		echo "No se pudo llevar a cabo la conexión.";
-	}
+	require 'connection.php';
 
 	if (isset($_POST['text1Done'])) {
 //GET THE TIMER FROM HTML BY JS

@@ -1,9 +1,5 @@
 <?php
-	$connection = mysqli_connect('localhost', 'root', '', 'bacs383');
-
-	if (!$connection) {
-		echo "Unable to connect to db.";
-	}
+	require 'connection.php';
 
 	error_reporting(E_ALL);
 	ini_set('display_errors', TRUE);
